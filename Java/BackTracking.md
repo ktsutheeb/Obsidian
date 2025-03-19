@@ -1,92 +1,29 @@
-My Solution -[39. Combination Sum](https://leetcode.com/problems/combination-sum/)
+### My Solution -[39. Combination Sum](https://leetcode.com/problems/combination-sum/)
+```java
 class Solution {
-
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-
         List<List<Integer>> ans = new ArrayList<>();
-
-        fuckyou(0,candidates,new ArrayList<>(),target,ans);
-
+        func(0,candidates,new ArrayList<>(),target,ans);
         return ans;
-
     }
-
-    public void fuckyou(int i,int[] candidates,List<Integer> ds,int target,List<List<Integer>> ans){
-
+    public void func(int i,int[] candidates,List<Integer> ds,int target,List<List<Integer>> ans){
         if(i==candidates.length){
-
             if(target==0){
-
                 ans.add(new ArrayList<>(ds));
-
             }
-
             return;
-
         }
-
         if(candidates[i]<=target){
-
             ds.add(candidates[i]);
-
-            fuckyou(i,candidates,ds,target-candidates[i],ans);
-
+            func(i,candidates,ds,target-candidates[i],ans);
             ds.remove(ds.size()-1);
-
         }
-
-        fuckyou(i+1,candidates,ds,target,ans);
-
+        func(i+1,candidates,ds,target,ans);
     }
-
 }
+```
 
-class Solution {
-
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-
-        List<List<Integer>> ans = new ArrayList<>();
-
-        f(0, candidates, new ArrayList<>(), target, ans);
-
-        return ans;
-
-    }
-
-  
-
-    public void f(int i, int[] candidates, List<Integer> ds, int target, List<List<Integer>> ans) {
-
-        if (i == candidates.length) {
-
-            if (target == 0) {
-
-                ans.add(new ArrayList<>(ds));
-
-            }
-
-            return;
-
-        }
-
-        if (candidates[i] <= target) {
-
-            ds.add(candidates[i]);
-
-  
-
-            f(i, candidates, ds, target - candidates[i], ans);
-
-            ds.remove(ds.size() - 1);
-
-        }
-
-        f(i + 1, candidates, ds, target, ans);
-
-    }
-
-}
-another way
+### Another way
 ```java
 class Solution {
     private void backtrack(int[] candidates,int target,int start,List<Integer> curr,List<List<Integer>> ans) {
@@ -112,10 +49,6 @@ class Solution {
 ```
 
 
-
-
-Chat gpt -
-Sure! Let’s go through a **dry run** of your code to understand how it works step by step. 😊
 
 ---
 
@@ -307,7 +240,7 @@ Let me know if this helps or if you want to explore further! 🚀
 
 ##### You said:
 
-understand tell iteration 6
+understand till iteration 6
 
 ###### ChatGPT said:
 
